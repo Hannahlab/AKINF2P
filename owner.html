@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Owner Dashboard | AKINF2P</title>
+    <meta name="robots" content="noindex" />
+
+    <link rel="icon" href="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784216475/file_00000000eed471f491495382e79eea06_otmtrn.png" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/features.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <img
+            src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784216475/file_00000000eed471f491495382e79eea06_otmtrn.png"
+            alt="AKINF2P"
+          />
+        </a>
+
+        <div class="nav-buttons">
+          <a
+            href="dashboard.html"
+            class="account-btn"
+            style="text-decoration: none; display: flex; align-items: center; gap: 8px; padding: 0 16px; color: #e0b351;"
+          >
+            <i class="fa-solid fa-arrow-left"></i> My Dashboard
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="dashboard-page">
+      <div class="dashboard-container">
+        <h1>👑 Owner Dashboard</h1>
+        <p class="dashboard-subtitle">Full control — analytics, members, memberships, codes, and moderation.</p>
+
+        <div id="ownerAccessDenied" style="display: none">
+          <div class="dashboard-card">
+            <p>This page is only accessible to the site owner.</p>
+            <button class="gold-btn" onclick="window.location.href='index.html'">Go to homepage</button>
+          </div>
+        </div>
+
+        <div id="ownerContent" style="display: none">
+
+          <!-- ANALYTICS -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-chart-line"></i> Analytics</h2>
+
+            <div class="stat-grid">
+              <div class="stat-box">
+                <div class="stat-value" id="statTotalUsers">—</div>
+                <div class="stat-label">Total Members</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-value" id="statActiveMembers">—</div>
+                <div class="stat-label">Active Pro Members</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-value" id="statAdmins">—</div>
+                <div class="stat-label">Admins</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-value" id="statMessages">—</div>
+                <div class="stat-label">Chat Messages</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-value" id="statRevenue">—</div>
+                <div class="stat-label">Total Revenue</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-value" id="statSignupsWeek">—</div>
+                <div class="stat-label">Signups (7 days)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GENERATE CODES -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-ticket"></i> Generate VIP Unlock Codes</h2>
+            <p>Only you can generate these. Each code works for exactly one member, once.</p>
+
+            <input type="number" id="genCodeCount" min="1" max="100" value="1" style="max-width: 140px" />
+            <button class="mini-btn" id="genCodeBtn">Generate</button>
+
+            <p class="auth-error" id="genCodeError"></p>
+
+            <div id="genCodeResults" style="margin-top: 14px"></div>
+          </div>
+
+          <!-- MEMBERS & ROLES -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-users"></i> Members &amp; Roles</h2>
+            <p>Promote a member to admin (chat moderation powers only) or demote back to member.</p>
+
+            <table class="dashboard-table" id="membersTable">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Role</th>
+                  <th>Membership</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="membersTableBody">
+                <tr><td colspan="4">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- MEMBERSHIP PAYMENTS -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-receipt"></i> Recent Payments</h2>
+
+            <table class="dashboard-table" id="paymentsTable">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Period End</th>
+                </tr>
+              </thead>
+              <tbody id="paymentsTableBody">
+                <tr><td colspan="4">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- VIP PACKAGE SETTINGS -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-crown"></i> VIP Package Settings</h2>
+            <p>Change the name, price, and feature list shown on the VIP page — updates everywhere automatically, including what's actually charged.</p>
+
+            <input type="text" id="planNameInput" placeholder="Plan name" />
+            <input type="number" id="planPriceInput" placeholder="Price (ZAR)" step="0.01" min="0" />
+            <textarea id="planFeaturesInput" rows="5" placeholder="One feature per line" style="width: 100%; padding: 12px 14px; margin-bottom: 12px; border: none; outline: none; border-radius: 10px; background: #1a1208; color: #fff; font-size: 14px; font-family: inherit;"></textarea>
+
+            <p class="auth-error" id="planSettingsError"></p>
+            <button class="gold-btn" id="planSettingsSaveBtn">Save Package Settings</button>
+          </div>
+
+          <!-- INVESTMENT MANAGEMENT -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-coins"></i> Investment Picks</h2>
+            <p>Add, edit, or remove the weekly picks shown on the Investments page.</p>
+
+            <input type="text" id="invTitle" placeholder="Title (e.g. Weekly Investment #1)" />
+            <input type="text" id="invDescription" placeholder="Description" />
+            <input type="text" id="invImageUrl" placeholder="Image URL (optional)" />
+            <select id="invStatus" class="role-select" style="width: 100%; padding: 12px; margin-bottom: 12px;">
+              <option value="coming_soon">Coming Soon</option>
+              <option value="active">Available Now</option>
+              <option value="sold">Sold Out</option>
+            </select>
+            <p class="auth-error" id="invError"></p>
+            <button class="gold-btn" id="invAddBtn">Add Pick</button>
+            <input type="hidden" id="invEditId" value="" />
+            <button class="link-btn" id="invCancelEditBtn" style="display: none">Cancel edit</button>
+
+            <table class="dashboard-table" id="investmentsTable" style="margin-top: 20px">
+              <thead>
+                <tr><th>Title</th><th>Status</th><th>Action</th></tr>
+              </thead>
+              <tbody id="investmentsTableBody">
+                <tr><td colspan="3">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- VIP PACKAGE SETTINGS -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-crown"></i> VIP Package Settings</h2>
+            <p>Change the membership name, price, and feature list — this is what actually gets charged, not just what's shown on the page.</p>
+
+            <input type="text" id="planNameInput" placeholder="Plan name (e.g. Akinf2p Pro)" />
+            <input type="number" id="planPriceInput" placeholder="Price in Rand (e.g. 59.99)" step="0.01" min="0" />
+            <textarea id="planFeaturesInput" placeholder="One feature per line" rows="5" style="width: 100%; padding: 12px 14px; margin-bottom: 12px; border: none; outline: none; border-radius: 10px; background: #1a1208; color: #fff; font-size: 14px; font-family: inherit; resize: vertical;"></textarea>
+
+            <p class="auth-error" id="planError"></p>
+            <button class="gold-btn" id="planSaveBtn">Save Plan Changes</button>
+          </div>
+
+          <!-- COMMUNITY MODERATION -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-shield-halved"></i> Community Moderation</h2>
+            <p>
+              Delete any message directly from the chat — hover a message in
+              <a href="community.html" style="color: #e0b351">Community</a> and use the trash icon.
+              That action is available to you and any admin, and is enforced by the database
+              itself, not just hidden buttons.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/owner.js" defer></script>
+  </body>
+</html>

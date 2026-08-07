@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard.html
+Disallow: /owner.html
+
+Sitemap: https://www.akinf2p.com/sitemap.xml

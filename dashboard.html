@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Dashboard | AKINF2P</title>
+    <meta name="robots" content="noindex" />
+
+    <link rel="icon" href="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784216475/file_00000000eed471f491495382e79eea06_otmtrn.png" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/features.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <img
+            src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784216475/file_00000000eed471f491495382e79eea06_otmtrn.png"
+            alt="AKINF2P"
+          />
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
+  <img src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1786067777/file_000000006b4c81f4a65d0a74418bdd68_foo0bs.png" alt="Menu" class="mobile-menu-icon" />
+</button>
+        
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-links">
+          <li><a href="index.html"><img src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784273582/file_00000000cc20720aaa54bbf5fe0bb144_vt8fmi.png" class="nav-icon" alt="Home" /></a></li>
+          <li><a href="investments.html"><img src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784273164/file_000000004fac720aa4093378ca3af275_zpzcgr.png" class="nav-icon" alt="Investments" /></a></li>
+          <li><a href="community.html"><img src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784273040/file_000000002a4071f4957a77556c51dce1_jsqbku.png" class="nav-icon" alt="Community" /></a></li>
+          <li><a href="vip.html" id="vipNavLink"><img src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784651639/file_00000000947471f4941d0769f92ac8ca_1_hd32ew.png" class="nav-icon" alt="VIP" /></a></li>
+          <li><a href="https://youtube.com/@akinf2p?si=AJE3v2yP7K7Ql9GY" target="_blank"><img src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784272640/file_00000000fc50720a9e1db18d46aaa5ce_oqhcio.png" class="nav-icon" alt="YouTube" /></a></li>
+        </ul>
+
+        <div class="nav-buttons">
+          <button class="account-btn" id="accountBtn">
+            <img
+              src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784276226/file_00000000149471f49687a90326559320_yexzor.png"
+              class="nav-icon"
+              alt="Account"
+            />
+          </button>
+        </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="dashboard-page">
+      <div class="dashboard-container">
+        <h1>My Dashboard</h1>
+        <p class="dashboard-subtitle">Manage your account, membership, and VIP access.</p>
+
+        <div id="dashboardLoggedOut" style="display: none">
+          <div class="dashboard-card">
+            <p>You need to be logged in to view your dashboard.</p>
+            <button class="gold-btn" onclick="window.location.href='index.html'">Go to homepage</button>
+          </div>
+        </div>
+
+        <div id="dashboardContent" style="display: none">
+
+          <!-- PROFILE -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-user"></i> Profile</h2>
+
+            <div class="profile-summary">
+              <div class="profile-avatar-wrap">
+                <img id="dashAvatarImg" src="assets/avatars/default-avatar.png" alt="Avatar" />
+                <button class="avatar-upload-btn" id="avatarUploadBtn" title="Change profile picture">
+                  <i class="fa-solid fa-camera"></i>
+                </button>
+                <input type="file" id="avatarUploadInput" accept="image/*" hidden />
+              </div>
+
+              <div class="profile-summary-info">
+                <div class="username" id="dashUsername">—</div>
+                <span class="role-badge" id="dashRoleBadge"></span>
+              </div>
+            </div>
+
+            <p style="margin-top: 16px">
+              <span class="logout-link" id="logoutLink">Log out</span>
+              &nbsp;•&nbsp;
+              <a href="owner.html" id="ownerDashboardLink" style="display: none; color: #e0b351">Owner Dashboard →</a>
+            </p>
+          </div>
+
+          <!-- ACCOUNT SETTINGS -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-gear"></i> Account Settings</h2>
+            <p>Update your display name.</p>
+
+            <input type="text" id="settingsUsername" placeholder="Username" />
+            <p class="auth-error" id="settingsError"></p>
+            <="gold-btn" id="settingsSaveBtn">Save Changes</button>
+          </div>
+
+          <!-- MEMBERSHIP -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-crown"></i> Akinf2p Pro Membership</h2>
+
+            <div id="membershipStatusBadge" class="membership-status inactive">Not active</div>
+            <p id="membershipDetails">You don't have an active membership yet.</p>
+
+            <button class="gold-btn" id="dashJoinProBtn" style="margin-top: 14px">
+              🚀 Join Akinf2p Pro — R59.99/month
+            </button>
+          </div>
+
+          <!-- VIP CODE -->
+          <div class="dashboard-card">
+            <h2><i class="fa-solid fa-key"></i> Have a VIP unlock code?</h2>
+            <p>Enter it here to unlock the VIP Lounge chat channel.</p>
+
+            <input type="text" id="dashRedeemCodeInput" placeholder="VIP unlock code" />
+            <p class="auth-error" id="dashRedeemError"></p>
+            <button class="gold-btn" id="dashRedeemBtn">Unlock VIP Access</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+  </body>
+</html>

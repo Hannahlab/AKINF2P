@@ -1,0 +1,239 @@
+/* ==========================================
+   DASHBOARD LAYOUT
+========================================== */
+
+.dashboard-page {
+  background: #090500;
+  min-height: 100vh;
+  padding: 110px 30px 60px;
+}
+
+.dashboard-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dashboard-container h1 {
+  color: #e0b351;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.dashboard-subtitle {
+  color: #999;
+  margin-bottom: 40px;
+}
+
+.dashboard-card {
+  background: #0f0902;
+  border: 1px solid rgba(134, 110, 67, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-card h2 {
+  color: #e0b351;
+  font-size: 20px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard-card p {
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-avatar-wrap {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+}
+
+.profile-avatar-wrap img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(224, 179, 81, 0.4);
+}
+
+.avatar-upload-btn {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e0b351;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-summary-info .username {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.profile-summary-info .role-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.role-badge.owner-role { background: #866e43; color: #000; }
+.role-badge.admin-role { background: #2563eb; color: #fff; }
+.role-badge.mod-role { background: #16a34a; color: #fff; }
+
+.membership-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.membership-status.active {
+  background: rgba(22, 163, 74, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(22, 163, 74, 0.4);
+}
+
+.membership-status.inactive {
+  background: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.dashboard-card input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #1a1208;
+  color: #fff;
+  font-size: 14px;
+}
+
+.dashboard-card input::placeholder {
+  color: #888;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #ddd;
+  font-size: 13px;
+}
+
+.dashboard-table th {
+  color: #e0b351;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.dashboard-table .role-select {
+  background: #1a1208;
+  color: #fff;
+  border: 1px solid rgba(134, 110, 67, 0.3);
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.mini-btn {
+  background: #e0b351;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mini-btn:hover {
+  opacity: 0.9;
+}
+
+.mini-btn.danger {
+  background: #8b0000;
+  color: #fff;
+}
+
+.code-chip {
+  display: inline-block;
+  background: #1a1208;
+  border: 1px solid rgba(134, 110, 67, 0.3);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-family: monospace;
+  font-size: 13px;
+  color: #e0b351;
+  margin: 3px 4px 3px 0;
+}
+
+.logout-link {
+  color: #ff6b6b;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.stat-box {
+  background: #1a1208;
+  border: 1px solid rgba(134, 110, 67, 0.25);
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+}
+
+.stat-box .stat-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: #e0b351;
+}
+
+.stat-box .stat-label {
+  font-size: 12px;
+  color: #999;
+  margin-top: 4px;
+}

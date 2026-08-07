@@ -1,0 +1,353 @@
+/* ==========================================
+   AKINF2P — INJECTED FEATURES STYLESHEET
+========================================== */
+
+/* ---------- Generic toast ---------- */
+
+.feature-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+
+  background: #181008;
+  color: #fff;
+
+  padding: 12px 22px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(224, 179, 81, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 0.3s;
+  z-index: 100000;
+}
+
+.feature-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ---------- Auth modal: errors, link button ---------- */
+
+.auth-error {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin: -6px 0 6px;
+  min-height: 16px;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #e0b351;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+.link-btn:hover {
+  color: #fff;
+}
+
+/* ---------- Message hover action bar ---------- */
+
+.message {
+  position: relative;
+  padding-top: 6px;
+}
+
+.message-hover-actions {
+  position: absolute;
+  top: 0;
+  right: 4px;
+
+  display: flex;
+  gap: 6px;
+
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+
+  padding: 6px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+
+  transition: 0.2s ease;
+
+  z-index: 50;
+}
+
+.message:hover .message-hover-actions,
+.message.menu-pinned .message-hover-actions {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.hover-action-btn {
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #bbb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+.hover-action-btn:hover {
+  background: #866e43;
+  color: #000;
+}
+
+.hover-action-btn.report-btn:hover {
+  background: #8b0000;
+  color: #fff;
+}
+
+.hover-action-btn.delete-btn:hover {
+  background: #8b0000;
+  color: #fff;
+}
+
+/* ---------- React emoji tray (from hover bar) ---------- */
+
+.hover-react-tray {
+  position: absolute;
+  top: 42px;
+  right: 4px;
+
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+
+  max-width: 230px;
+
+  background: #202020;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+
+  padding: 8px 10px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  z-index: 51;
+}
+
+.hover-react-tray.active {
+  display: flex;
+}
+
+.hover-react-tray button {
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+
+  font-size: 17px;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.hover-react-tray button:hover {
+  background: #3a3a3a;
+  transform: scale(1.1);
+}
+
+/* ---------- Reaction badges (Discord-style count pills) ---------- */
+
+.reaction {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  background: #181008;
+  border: 1px solid rgba(134, 110, 67, 0.3);
+  border-radius: 20px;
+
+  padding: 3px 10px;
+  margin-right: 6px;
+
+  font-size: 13px;
+  color: #ddd;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.reaction:hover {
+  border-color: #866e43;
+}
+
+.reaction.reaction-mine {
+  background: rgba(134, 110, 67, 0.35);
+  border-color: #e0b351;
+  color: #fff;
+}
+
+/* ---------- VIP redeem box (inline, inside the locked card) ---------- */
+
+#vipRedeemBox {
+  margin-top: 16px;
+  text-align: left;
+}
+
+#vipRedeemBox input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+
+  border: none;
+  outline: none;
+  border-radius: 12px;
+
+  background: #1a1208;
+  color: #fff;
+  font-size: 14px;
+}
+
+#vipRedeemBox input::placeholder {
+  color: #888;
+}
+
+/* ---------- Main chat-input-bar: emoji picker ---------- */
+
+.emoji-picker-wrapper {
+  position: relative;
+}
+
+.emoji-picker-panel {
+  position: absolute;
+  bottom: 58px;
+  left: 0;
+
+  display: none;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  width: 260px;
+  max-height: 180px;
+
+  overflow-y: auto;
+
+  background: #181008;
+  border: 1px solid rgba(134, 110, 67, 0.3);
+  border-radius: 16px;
+
+  padding: 12px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+
+  z-index: 60;
+}
+
+.emoji-picker-panel.active {
+  display: flex;
+}
+
+.emoji-pick {
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+
+  font-size: 19px;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.emoji-pick:hover {
+  background: rgba(134, 110, 67, 0.25);
+}
+
+/* ---------- Search result highlighting ---------- */
+
+.search-highlight {
+  background: rgba(224, 179, 81, 0.55);
+  color: #000;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+/* ---------- Empty chat state ---------- */
+
+.empty-chat-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  padding: 60px 20px;
+
+  color: #777;
+  text-align: center;
+}
+
+.empty-chat-state i {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #866e43;
+}
+
+/* ---------- Message hidden by search filter ---------- */
+
+.message.search-hidden {
+  display: none !important;
+}
+
+/* ---------- Inline reply quote ---------- */
+
+.reply-quote {
+  font-size: 12.5px;
+  color: #b7a06b;
+  background: rgba(134, 110, 67, 0.12);
+  border-left: 3px solid #866e43;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.reply-quote i {
+  margin-right: 6px;
+}
+
+/* ---------- Uploaded image preview inside a message ---------- */
+
+.message-image-preview {
+  margin-top: 10px;
+  max-width: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(134, 110, 67, 0.25);
+}
+
+.message-image-preview img {
+  width: 100%;
+  display: block;
+}

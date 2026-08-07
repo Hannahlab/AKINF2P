@@ -1,0 +1,762 @@
+/* ==========================================
+   COMMUNITY PAGE
+========================================== */
+
+.community-page {
+  background: #090500;
+  min-height: 100vh;
+  padding: 110px 30px 40px;
+}
+
+.community-wrapper {
+  max-width: 1700px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 260px 1fr 260px;
+  gap: 25px;
+
+  min-height: calc(100vh - 170px);
+}
+
+/* ==========================================
+PANELS
+========================================== */
+
+.community-sidebar,
+.community-chat,
+.members-sidebar {
+  background: #0f0902;
+  border: 1px solid rgba(134, 110, 67, 0.15);
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================================
+LEFT SIDEBAR
+========================================== */
+
+.community-sidebar {
+  padding: 25px;
+}
+
+.community-sidebar h3 {
+  color: #866e43;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+.channel {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #ddd;
+  text-align: left;
+  padding: 15px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.25s;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.channel:hover {
+  background: rgba(134, 110, 67, 0.12);
+}
+
+.channel.active {
+  background: rgba(134, 110, 67, 0.2);
+  color: #866e43;
+}
+
+/* ==========================================
+MAIN CHAT
+========================================== */
+
+.community-chat {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.channel-page {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.channel-page.active {
+  display: flex;
+}
+
+/* ==========================================
+CHAT HEADER
+========================================== */
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 28px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.chat-header h2 {
+  color: #866e43;
+  font-size: 24px;
+}
+
+.chat-search {
+  width: 270px;
+  height: 45px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 30px;
+
+  background: #181008;
+
+  color: #fff;
+
+  padding: 0 18px;
+}
+
+.chat-search::placeholder {
+  color: #777;
+}
+
+/* ==========================================
+MESSAGES AREA
+========================================== */
+
+.messages {
+  flex: 1;
+
+  overflow-y: auto;
+
+  min-height: 0;
+}
+
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: #866e43;
+  border-radius: 30px;
+}
+
+/* ==========================================
+MESSAGE
+========================================== */
+
+.message {
+  display: flex;
+  gap: 18px;
+
+  margin-bottom: 28px;
+
+  position: relative;
+}
+
+.community-avatar {
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+  border: 2px solid rgba(134, 110, 67, 0.2);
+}
+
+.community-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.owner-avatar {
+  border-color: #866e43;
+  box-shadow: 0 0 18px rgba(134, 110, 67, 0.35);
+}
+
+.message-content {
+  flex: 1;
+}
+
+.message-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 8px;
+}
+
+.username {
+  font-weight: 700;
+  color: #fff;
+}
+
+.username.owner {
+  color: #866e43;
+}
+
+.role {
+  font-size: 11px;
+
+  padding: 4px 10px;
+
+  border-radius: 20px;
+
+  font-weight: 700;
+}
+
+.owner-role {
+  background: #866e43;
+  color: #000;
+}
+
+.admin-role {
+  background: #2563eb;
+  color: #fff;
+}
+
+.mod-role {
+  background: #16a34a;
+  color: #fff;
+}
+
+.message-content p {
+  color: #d9d9d9;
+  line-height: 1.7;
+}
+
+.message-reactions {
+  display: flex;
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+.message-reactions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.reaction-btn {
+  background: #181008;
+
+  border: 1px solid rgba(134, 110, 67, 0.25);
+
+  color: #ddd;
+
+  padding: 6px 14px;
+
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  transition: 0.25s;
+}
+
+.reaction-btn:hover {
+  background: #866e43;
+
+  color: #000;
+}
+
+/* ==========================================
+CHAT INPUT BAR
+========================================== */
+
+.chat-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  flex-shrink: 0;
+
+  padding: 18px 20px;
+
+  background: #0f0902;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.chat-btn {
+  width: 46px;
+  height: 46px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #181008;
+
+  color: #bfbfbf;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.chat-btn:hover {
+  background: #866e43;
+  color: #000;
+}
+
+.chat-message-input {
+  flex: 1;
+
+  height: 48px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 30px;
+
+  background: #181008;
+
+  color: #fff;
+
+  padding: 0 20px;
+
+  font-size: 15px;
+}
+
+.chat-message-input::placeholder {
+  color: #777;
+}
+
+.send-message-btn {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #866e43;
+
+  color: #000;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: 0.25s;
+}
+
+.send-message-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(134, 110, 67, 0.4);
+}
+
+/* ==========================================
+ONLINE MEMBERS
+========================================== */
+
+.members-sidebar {
+  padding: 25px;
+}
+
+.members-sidebar h3 {
+  color: #866e43;
+  margin-bottom: 20px;
+}
+
+.member {
+  padding: 14px 0;
+
+  color: #ddd;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================
+VIP LOUNGE (locked card)
+========================================== */
+
+.vip-lock-card {
+  max-width: 650px;
+
+  margin: 50px auto;
+
+  background: #161007;
+
+  border: 1px solid rgba(134, 110, 67, 0.25);
+
+  border-radius: 20px;
+
+  padding: 45px 35px;
+
+  text-align: center;
+}
+
+.vip-lock-card .vip-icon {
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.vip-lock-card h2 {
+  color: #866e43;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.vip-subtitle {
+  color: #866e43;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.vip-lock-card p {
+  color: #d5d5d5;
+  line-height: 1.7;
+}
+
+.vip-benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  margin: 28px 0;
+  text-align: left;
+}
+
+.vip-benefits div {
+  background: #1d1409;
+  border: 1px solid rgba(134, 110, 67, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: #ddd;
+  font-size: 14px;
+}
+
+.vip-join-btn {
+  display: inline-block;
+
+  background: linear-gradient(135deg, #e0b351, #866e43);
+  color: #000;
+  font-weight: 700;
+
+  padding: 14px 32px;
+  border-radius: 30px;
+
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+
+  transition: 0.25s ease;
+}
+
+.vip-join-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(224, 179, 81, 0.3);
+}
+
+.vip-note {
+  margin-top: 18px;
+  font-size: 13px;
+  color: #999;
+}
+
+.vip-lock-card #vipRedeemToggleBtn {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(134, 110, 67, 0.2);
+  width: 100%;
+  display: block;
+  font-size: 14px;
+}
+
+.vip-lock-card #vipRedeemBox {
+  max-width: 320px;
+  margin: 16px auto 0;
+}
+
+/* ==========================================
+ANNOUNCEMENTS
+========================================== */
+
+.announcement-lock {
+  text-align: center;
+
+  max-width: 650px;
+
+  margin: 50px auto;
+
+  background: #161007;
+
+  border: 1px solid rgba(134, 110, 67, 0.25);
+
+  border-radius: 18px;
+
+  padding: 45px 30px;
+}
+
+.announcement-lock h2 {
+  color: #866e43;
+
+  margin: 20px 0;
+}
+
+.announcement-lock p {
+  color: #d5d5d5;
+
+  line-height: 1.7;
+}
+
+/* ==========================================
+GIVEAWAY CARD
+========================================== */
+
+.giveaway-card {
+  max-width: 700px;
+
+  margin: 25px auto;
+
+  background: #161007;
+
+  border: 1px solid rgba(134, 110, 67, 0.25);
+
+  border-radius: 20px;
+
+  padding: 35px;
+}
+
+.giveaway-card h2 {
+  color: #866e43;
+
+  margin-bottom: 20px;
+}
+
+.giveaway-card h3 {
+  color: #866e43;
+
+  margin-top: 30px;
+
+  margin-bottom: 12px;
+}
+
+.giveaway-card p,
+.giveaway-card li {
+  color: #ddd;
+
+  line-height: 1.8;
+}
+
+.giveaway-card ul {
+  margin-left: 22px;
+}
+
+.giveaway-status,
+.giveaway-rules,
+.redeem-box {
+  margin-top: 30px;
+}
+
+.redeem-box input {
+  width: 100%;
+
+  height: 48px;
+
+  margin-top: 15px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 12px;
+
+  background: #1d1409;
+
+  color: #fff;
+
+  padding: 0 15px;
+}
+
+.redeem-box button {
+  width: 100%;
+
+  margin-top: 15px;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #866e43;
+
+  color: #000;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.redeem-box button:hover {
+  opacity: 0.9;
+}
+
+/* ==========================================
+   RESPONSIVE — CHAT LAYOUT
+   Below desktop width, the channels list and online-members
+   list both become slide-in panels (toggled by the two floating
+   buttons), instead of being hidden with no way to reach them.
+   Chat itself takes the full width.
+========================================== */
+
+.mobile-panel-toggle {
+  display: none;
+}
+
+.mobile-panel-overlay {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .community-page {
+    padding: 90px 0 0;
+  }
+
+  .community-wrapper {
+    display: block;
+    max-width: 100%;
+    min-height: calc(100vh - 90px);
+    position: relative;
+  }
+
+  .community-chat {
+    height: calc(100vh - 90px);
+    border-radius: 0;
+  }
+
+  .mobile-panel-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    bottom: 90px;
+    z-index: 500;
+
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    background: #866e43;
+    color: #000;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .channels-toggle {
+    left: 14px;
+  }
+
+  .members-toggle {
+    right: 14px;
+  }
+
+  .mobile-panel-overlay.active {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 899;
+  }
+
+  .community-sidebar,
+  .members-sidebar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: none;
+    max-height: 70vh;
+
+    z-index: 900;
+    border-radius: 20px 20px 0 0;
+
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .community-sidebar.open,
+  .members-sidebar.open {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .chat-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 18px;
+  }
+
+  .chat-search {
+    width: 100%;
+  }
+
+  .message {
+    gap: 12px;
+  }
+
+  .community-avatar {
+    width: 42px;
+    height: 42px;
+  }
+
+  .chat-input-bar {
+    padding: 12px 14px;
+    gap: 8px;
+  }
+
+  .chat-btn,
+  .send-message-btn {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .message-hover-actions {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    margin-top: 8px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .hover-react-tray {
+    position: absolute;
+    top: auto;
+  }
+}

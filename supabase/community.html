@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Community Chat | AKINF2P FC Mobile Investors</title>
+
+    <meta
+      name="description"
+      content="Chat live with the AKINF2P FC Mobile investing community. Discuss picks, join giveaways, and unlock the VIP Lounge."
+    />
+
+    <link rel="canonical" href="https://www.akinf2p.com/community.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Community Chat | AKINF2P FC Mobile Investors" />
+    <meta
+      property="og:description"
+      content="Chat live with the AKINF2P FC Mobile investing community."
+    />
+    <meta property="og:url" content="https://www.akinf2p.com/community.html" />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784216475/file_00000000eed471f491495382e79eea06_otmtrn.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AKINF2P Community Chat" />
+    <meta name="twitter:description" content="Chat live with the AKINF2P FC Mobile investing community." />
+
+    <link rel="icon" href="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784216475/file_00000000eed471f491495382e79eea06_otmtrn.png" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/features.css" />
+
+    <link rel="stylesheet" href="css/community.css" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ===========================
+ACCOUNT MODAL
+=========================== -->
+
+    <div class="account-modal" id="accountModal">
+      <div class="account-box">
+        <button class="close-modal" id="closeModal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <img src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1783768263/WhatsApp_Image_2026-07-10_at_8.12.10_PM_w8krge.jpg" alt="AKINF2P Logo" class="account-logo" />
+
+        <h2>Welcome to AKINF2P</h2>
+
+        <p>Sign in to continue or create your free account.</p>
+
+        <!-- Tabs -->
+
+        <div class="account-tabs">
+          <button class="tab-btn active" id="loginTab">Login</button>
+
+          <button class="tab-btn" id="signupTab">Sign Up</button>
+        </div>
+
+        <!-- Login Form -->
+
+        <div class="tab-content active" id="loginContent">
+          <input type="email" id="loginEmail" placeholder="Email Address" />
+
+          <div class="password-field-wrap">
+            <input type="password" id="loginPassword" placeholder="Password" />
+            <button type="button" class="toggle-password-btn" data-target="loginPassword" aria-label="Show password">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+
+          <p class="auth-error" id="loginError"></p>
+
+          <button class="gold-btn" id="loginBtn">Login</button>
+
+          <button class="link-btn" id="forgotPasswordBtn">Forgot password?</button>
+        </div>
+
+        <!-- Sign Up Form -->
+
+        <div class="tab-content" id="signupContent">
+          <input type="text" id="signupUsername" placeholder="Username" />
+
+          <input type="email" id="signupEmail" placeholder="Email Address" />
+
+          <div class="password-field-wrap">
+            <input type="password" id="signupPassword" placeholder="Create Password" />
+            <button type="button" class="toggle-password-btn" data-target="signupPassword" aria-label="Show password">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+
+          <p class="auth-error" id="signupError"></p>
+
+          <button class="gold-btn" id="joinPlatformBtn">Join Platform</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===========================
+HEADER
+=========================== -->
+
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <img
+            src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784216475/file_00000000eed471f491495382e79eea06_otmtrn.png"
+            alt="AKINF2P"
+          />
+        </a>
+
+        
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-links">
+          <li>
+            <a href="index.html">
+              <img
+                src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784273582/file_00000000cc20720aaa54bbf5fe0bb144_vt8fmi.png"
+                class="nav-icon"
+                alt="Home"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a href="investments.html">
+              <img
+                src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784273164/file_000000004fac720aa4093378ca3af275_zpzcgr.png"
+                class="nav-icon"
+                alt="Investments"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a href="community.html">
+              <img
+                src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784273040/file_000000002a4071f4957a77556c51dce1_jsqbku.png"
+                class="nav-icon"
+                alt="Community"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a href="vip.html" id="vipNavLink">
+              <img
+                src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784651639/file_00000000947471f4941d0769f92ac8ca_1_hd32ew.png"
+                class="nav-icon"
+                alt="VIP"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://youtube.com/@akinf2p?si=AJE3v2yP7K7Ql9GY" target="_blank">
+              <img
+                src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784272640/file_00000000fc50720a9e1db18d46aaa5ce_oqhcio.png"
+                class="nav-icon"
+                alt="YouTube"
+              />
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-buttons">
+          <button class="account-btn" id="accountBtn">
+            <img
+              src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1784276226/file_00000000149471f49687a90326559320_yexzor.png"
+              class="nav-icon"
+              alt="Account"
+            />
+          </button>
+        </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ==========================================
+     COMMUNITY
+========================================== -->
+    <section class="community-page">
+      <div class="community-wrapper">
+        <button class="mobile-panel-toggle channels-toggle" id="toggleChannelsBtn" aria-label="Show channels">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <button class="mobile-panel-toggle members-toggle" id="toggleMembersBtn" aria-label="Show online members">
+          <i class="fa-solid fa-users"></i>
+        </button>
+
+        <div class="mobile-panel-overlay" id="mobilePanelOverlay"></div>
+
+        <!-- LEFT SIDEBAR -->
+
+        <aside class="community-sidebar" id="communitySidebar">
+          <h3>Community</h3>
+
+          <button class="channel active" id="general-btn">💬 General</button>
+
+          <button class="channel" id="announcements-btn">
+            📢 Announcements
+          </button>
+
+          <button class="channel" id="giveaways-btn">🎁 Giveaways</button>
+
+          <button class="channel" id="vip-btn">⭐ VIP Lounge</button>
+        </aside>
+
+        <!-- MAIN CHAT -->
+
+        <main class="community-chat">
+          <!-- GENERAL -->
+
+          <div id="general-channel" class="channel-page active">
+            <div class="chat-header">
+              <h2># General</h2>
+
+              <input
+                class="chat-search"
+                id="generalSearchInput"
+                type="search"
+                placeholder="Search messages..."
+              />
+            </div>
+
+            <div class="messages" id="generalMessages"></div>
+
+            <div class="reply-preview" id="replyPreview">
+              <div class="reply-info">
+                <span id="replyName">Replying to</span>
+                <p id="replyText"></p>
+              </div>
+              <button id="cancelReply">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <div class="chat-input-bar">
+              <div class="emoji-picker-wrapper">
+                <button class="chat-btn emoji-toggle-btn" id="emojiToggleBtn">
+                  <i class="fa-regular fa-face-smile"></i>
+                </button>
+
+                <div class="emoji-picker-panel" id="emojiPickerPanel">
+                  <button class="emoji-pick">😀</button>
+                  <button class="emoji-pick">😂</button>
+                  <button class="emoji-pick">😍</button>
+                  <button class="emoji-pick">😎</button>
+                  <button class="emoji-pick">🤔</button>
+                  <button class="emoji-pick">😢</button>
+                  <button class="emoji-pick">😡</button>
+                  <button class="emoji-pick">👍</button>
+                  <button class="emoji-pick">👎</button>
+                  <button class="emoji-pick">❤️</button>
+                  <button class="emoji-pick">🔥</button>
+                  <button class="emoji-pick">🎉</button>
+                  <button class="emoji-pick">💰</button>
+                  <button class="emoji-pick">⚽</button>
+                  <button class="emoji-pick">🏆</button>
+                  <button class="emoji-pick">🚀</button>
+                  <button class="emoji-pick">👑</button>
+                  <button class="emoji-pick">🙌</button>
+                  <button class="emoji-pick">💯</button>
+                  <button class="emoji-pick">😮</button>
+                </div>
+              </div>
+
+              <button class="chat-btn" id="attachmentBtn" title="Attach a file">
+                <i class="fa-solid fa-paperclip"></i>
+              </button>
+
+              <button class="chat-btn image-upload-btn" id="imageUploadBtn">
+                <i class="fa-regular fa-image"></i>
+              </button>
+
+              <input
+                type="file"
+                id="imageUploadInput"
+                accept="image/*"
+                hidden
+              />
+
+              <input
+                class="chat-message-input"
+                type="text"
+                placeholder="Message #general"
+              />
+
+              <button class="send-message-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ANNOUNCEMENTS -->
+
+          <div id="announcements-channel" class="channel-page">
+            <div class="chat-header">
+              <h2>📢 Announcements</h2>
+
+              <input
+                class="chat-search"
+                type="search"
+                placeholder="Search announcements..."
+              />
+            </div>
+
+            <div class="messages">
+              <div class="announcement-lock">
+                <div class="vip-icon">📢</div>
+
+                <h2>Official Announcements</h2>
+
+                <p>
+                  Only AKINF2P and approved administrators can post
+                  announcements.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- GIVEAWAYS -->
+
+          <div id="giveaways-channel" class="channel-page">
+            <div class="chat-header">
+              <h2>🎁 Giveaways</h2>
+
+              <input
+                class="chat-search"
+                type="search"
+                placeholder="Search giveaways..."
+              />
+            </div>
+
+            <div class="messages">
+              <div class="giveaway-card">
+                <h2>🎁 FC Mobile Mega Giveaway</h2>
+
+                <p>
+                  One lucky winner will receive an FC Mobile account containing:
+                </p>
+
+                <ul>
+                  <li>💰 2 Billion+ Coins</li>
+
+                  <li>⭐ Solid FC Mobile Squad</li>
+
+                  <li>🏆 Fully upgraded account</li>
+                </ul>
+
+                <div class="giveaway-status">
+                  <h3>📈 Giveaway Progress</h3>
+
+                  <p>
+                    The giveaway starts when the
+                    <strong>
+                      AKINF2P YouTube channel reaches 5,000 subscribers.
+                    </strong>
+                  </p>
+                </div>
+
+                <div class="giveaway-rules">
+                  <h3>📜 Rules</h3>
+
+                  <p>✔ Subscribe to AKINF2P YouTube channel</p>
+
+                  <p>✔ Wait until 5,000 subscribers</p>
+
+                  <p>✔ A winner will be selected</p>
+
+                  <p>✔ Winner receives a private redemption code</p>
+                </div>
+
+                <div class="redeem-box">
+                  <h3>🔐 Redeem Winning Code</h3>
+
+                  <input
+                    id="redeemCode"
+                    type="text"
+                    placeholder="Enter your code"
+                  />
+
+                  <button id="redeemBtn">Redeem Prize</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- VIP LOUNGE -->
+
+          <div id="vip-channel" class="channel-page">
+            <div class="chat-header">
+              <h2>⭐ VIP Lounge</h2>
+
+              <input
+                class="chat-search"
+                type="search"
+                placeholder="Search VIP..."
+              />
+            </div>
+
+            <div class="messages" id="vipLockedView">
+              <div class="vip-lock-card">
+                <div class="vip-icon">⭐</div>
+
+                <h2>VIP Lounge</h2>
+
+                <p class="vip-subtitle">Premium Members Only</p>
+
+                <p>
+                  This area is locked. VIP members get access to exclusive
+                  discussions, investment alerts and premium content.
+                </p>
+
+                <div class="vip-benefits">
+                  <div>📈 Early market alerts</div>
+
+                  <div>💰 Premium strategies</div>
+
+                  <div>🎁 VIP giveaways</div>
+
+                  <div>💬 Private community</div>
+
+                  <div>👑 Direct AKINF2P updates</div>
+                </div>
+
+                <a class="vip-join-btn" href="vip.html">⭐ Become a VIP Member</a>
+
+                <button class="link-btn" id="vipRedeemToggleBtn">
+                  Already paid? Enter your unlock code
+                </button>
+
+                <div id="vipRedeemBox" style="display: none">
+                  <input type="text" id="vipRedeemCodeInput" placeholder="VIP unlock code" />
+
+                  <p class="auth-error" id="vipRedeemError"></p>
+
+                  <button class="gold-btn" id="vipRedeemSubmitBtn">Unlock VIP Lounge</button>
+                </div>
+
+                <p class="vip-note">Not logged in yet? Log in first, then enter your code.</p>
+              </div>
+            </div>
+
+            <div class="messages" id="vipMessages" style="display: none"></div>
+
+            <div class="reply-preview" id="vipReplyPreview">
+              <div class="reply-info">
+                <span id="vipReplyName">Replying to</span>
+                <p id="vipReplyText"></p>
+              </div>
+              <button id="vipCancelReply">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <div class="chat-input-bar" id="vipInputBar" style="display: none">
+              <button class="chat-btn">
+                <i class="fa-regular fa-face-smile"></i>
+              </button>
+
+              <button class="chat-btn">
+                <i class="fa-solid fa-paperclip"></i>
+              </button>
+
+              <button class="chat-btn">
+                <i class="fa-regular fa-image"></i>
+              </button>
+
+              <input
+                class="chat-message-input"
+                type="text"
+                placeholder="Message #vip-lounge"
+              />
+
+              <button class="send-message-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </main>
+
+        <!-- ONLINE MEMBERS -->
+
+        <aside class="members-sidebar" id="membersSidebar">
+          <h3>ONLINE</h3>
+
+          <div id="onlineMembersList"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===========================
+FOOTER
+=========================== -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <img
+            src="https://res.cloudinary.com/kfcu2z4r/image/upload/v1783768263/WhatsApp_Image_2026-07-10_at_8.12.10_PM_w8krge.jpg"
+            alt="AKINF2P Logo"
+            class="footer-logo"
+          />
+
+          <p>The home of the FC Mobile investing community.</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+
+          <a href="investments.html"> Investments </a>
+
+          <a href="community.html"> Community </a>
+
+          <a href="vip.html"> VIP Membership </a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Support</h3>
+
+          <a href="#"> Contact </a>
+
+          <a href="#"> Privacy Policy </a>
+
+          <a href="#"> Terms & Conditions </a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+
+          <a href="https://youtube.com/@akinf2p?si=AJE3v2yP7K7Ql9GY" target="_blank">
+            <i class="fab fa-youtube"></i>
+            YouTube
+          </a>
+
+          <a href="#" target="_blank">
+            <i class="fab fa-instagram"></i>
+            Instagram
+          </a>
+
+          <a href="#" target="_blank">
+            <i class="fab fa-tiktok"></i>
+            TikTok
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 AKINF2P. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <div id="copyToast" class="copy-toast">Message copied</div>
+
+    <div class="report-toast" id="reportToast">
+      <i class="fa-solid fa-flag"></i>
+      Message reported. Thank you.
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+
+    <script src="js/supabase.js" defer></script>
+
+    <script src="js/auth.js" defer></script>
+
+    <script src="js/script.js" defer></script>
+
+    <script src="js/community.js" defer></script>
+
+    <script src="js/features.js" defer></script>
+
+
+  </body>
+</html>
